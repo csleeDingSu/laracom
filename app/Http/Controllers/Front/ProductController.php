@@ -57,6 +57,7 @@ class ProductController extends Controller
         $images = $product->images()->get();
         $category = $product->categories()->first();
         $productAttributes = $product->attributes;
+        $combos = null;
 
         return view('front.products.product', compact(
             'product',
