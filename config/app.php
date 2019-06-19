@@ -168,6 +168,8 @@ return [
         App\Providers\GlobalTemplateServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
+
     ],
 
     /*
