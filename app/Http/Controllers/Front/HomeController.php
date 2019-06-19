@@ -27,10 +27,16 @@ class HomeController
     public function index()
     {
         $cat = Category::whereNull('parent_id')->orderBy('id','desc')->get();
+        $cat1 = null;
+        $cat2 = null;
 
-        $cat1 = $this->categoryRepo->findCategoryById($cat[0]->id);
-        $cat2 = $this->categoryRepo->findCategoryById($cat[0]->id);
-
+        if (!empty($cat)) {
+            $cat1 = $this->categoryRepo->findCategoryById($cat[0]->id);
+            if (!empty($cat[1])) {
+                $cat2 = $this->categoryRepo->findCategoryById($cat[1]->id);    
+            }
+        }
+        
         return view('front.index', compact('cat1', 'cat2'));
     }
 }
