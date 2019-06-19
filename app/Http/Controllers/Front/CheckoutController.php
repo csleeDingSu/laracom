@@ -129,7 +129,8 @@ class CheckoutController extends Controller
             'total' => $this->cartRepo->getTotal(2),
             'payments' => $paymentGateways,
             'cartItems' => $this->cartRepo->getCartItemsTransformed(),
-            'shipment_object_id' => $shipment_object_id,
+            // 'shipment_object_id' => $shipment_object_id,
+            'shipment' => $shipment_object_id,
             'rates' => $rates
         ]);
     }
