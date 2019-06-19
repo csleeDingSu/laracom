@@ -109,6 +109,7 @@ class CategoryRepository extends BaseRepository implements CategoryRepositoryInt
         $category = $this->findCategoryById($this->model->id);
         $collection = collect($params)->except('_token');
         $slug = str_slug($collection->get('name'));
+        $cover = null;
 
         if (isset($params['cover']) && ($params['cover'] instanceof UploadedFile)) {
             $cover = $this->uploadOne($params['cover'], 'categories');
