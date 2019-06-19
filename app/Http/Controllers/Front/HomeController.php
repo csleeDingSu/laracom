@@ -28,8 +28,8 @@ class HomeController
     {
         $cat = Category::whereNull('parent_id')->orderBy('id','desc')->get();
 
-        $cat1 = $this->categoryRepo->findCategoryById($cat[0]);
-        $cat2 = $this->categoryRepo->findCategoryById($cat[0]);
+        $cat1 = $this->categoryRepo->findCategoryById($cat[0]->id);
+        $cat2 = $this->categoryRepo->findCategoryById($cat[0]->id);
 
         return view('front.index', compact('cat1', 'cat2'));
     }
