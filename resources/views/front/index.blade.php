@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    @include('layouts.front.home-slider')
+    <!-- @include('layouts.front.home-slider') -->
 
     @if($cat1->products->isNotEmpty())
         <section class="new-product t100 home">
@@ -30,6 +30,6 @@
             <div id="browse-all-btn"> <a class="btn btn-default browse-all-btn" href="{{ route('front.category.slug', $cat2->slug) }}" role="button">browse all items</a></div>
         </div>
     @endif
-    <hr />
-    @include('mailchimp::mailchimp')
+    <!-- <hr /> -->
+    <!-- @include('mailchimp::mailchimp') -->
 @endsection
