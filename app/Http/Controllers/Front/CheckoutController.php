@@ -103,6 +103,7 @@ class CheckoutController extends Controller
         $customer = $request->user();
         $rates = null;
         $shipment_object_id = null;
+        $shipment = null;
 
         if (env('ACTIVATE_SHIPPING') == 1) {
             $shipment = $this->createShippingProcess($customer, $products);
@@ -130,7 +131,8 @@ class CheckoutController extends Controller
             'payments' => $paymentGateways,
             'cartItems' => $this->cartRepo->getCartItemsTransformed(),
             'shipment_object_id' => $shipment_object_id,
-            'rates' => $rates
+            'rates' => $rates,
+            'shipment' => $shipment
         ]);
     }
 
